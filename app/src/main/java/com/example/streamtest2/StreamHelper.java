@@ -70,8 +70,18 @@ public class StreamHelper {
     }
 
     private void createPlayer(Context context) {
-        // Initialize ExoPlayer
-        exoPlayer = new ExoPlayer.Builder(context).build();
+        // Initialize ExoPlayer with the optimized load control
+        exoPlayer = new ExoPlayer.Builder(context)
+                .setLoadControl(new DefaultLoadControl.Builder()
+                        .setBufferDurationsMs(
+                                250,   // Min buffer duration before playback starts (ms)
+                                500,   // Max buffer duration during playback (ms)
+                                50,    // Min duration of data to retain in the buffer (ms)
+                                250    // Buffer duration to retain while rebuffering (ms)
+                        )
+                        .setPrioritizeTimeOverSizeThresholds(true)
+                        .build())
+                .build();
     }
 
     private void setupPlayer() {
