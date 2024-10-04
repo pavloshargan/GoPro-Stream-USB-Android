@@ -74,10 +74,10 @@ public class StreamHelper {
         exoPlayer = new ExoPlayer.Builder(context)
                 .setLoadControl(new DefaultLoadControl.Builder()
                         .setBufferDurationsMs(
-                                250,   // Min buffer duration before playback starts (ms)
-                                500,   // Max buffer duration during playback (ms)
+                                50,   // Min buffer duration before playback starts (ms)
+                                100,   // Max buffer duration during playback (ms)
                                 50,    // Min duration of data to retain in the buffer (ms)
-                                250    // Buffer duration to retain while rebuffering (ms)
+                                50    // Buffer duration to retain while rebuffering (ms)
                         )
                         .setPrioritizeTimeOverSizeThresholds(true)
                         .build())
