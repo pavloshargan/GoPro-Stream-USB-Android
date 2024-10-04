@@ -1,4 +1,4 @@
-package com.example.streamtest
+package com.example.streamtest2
 
 import org.junit.Test
 

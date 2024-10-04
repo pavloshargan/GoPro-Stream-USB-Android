@@ -1,4 +1,4 @@
-package com.example.streamtest.ui.theme
+package com.example.streamtest2.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
